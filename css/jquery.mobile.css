@@ -1566,6 +1566,7 @@ div.ui-mobile-viewport {
 	display: inline-block;
 	vertical-align: middle;
 	margin-right: .625em;
+    border-radius: .5em;
 }
 .ui-btn-icon-left {
 	padding-left: 2.5em;
