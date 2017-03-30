@@ -10,9 +10,7 @@
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme.css" />
         <title>UF2PR1JORDI/DANI</title>
 		<style>
-            .divsBtn{
-                text-align: center;   
-            }
+    
             #contBtn{
 					position:fixed;
 					width:70px;
@@ -45,7 +43,7 @@
                         <p><b>GPS: </b></p>
                         <div class="divsBtn">
                             <button class="ui-btn ui-btn-inline" style="background-color:#708090;">Llamar</button>
-                            <button class="ui-btn ui-btn-inline" style="background-color: #708090;" class="ui-btn-active">Mas</a></button>
+                            <button class="ui-btn ui-btn-inline" style="background-color: #708090;" onClick="location.href='mapa.html'" class="ui-btn-active">Mas</a></button>
                             <button class="ui-btn ui-btn-inline" style="background-color:#708090;">Edit</button>
                        </div>
                     </div>
@@ -56,7 +54,7 @@
                         <p><b>GPS: </b></p>
                         <div class="divsBtn">
                             <button class="ui-btn ui-btn-inline" style="background-color:#708090;">Llamar</button>
-                            <button class="ui-btn ui-btn-inline" style="background-color: #708090;" class="ui-btn-active">Mas</a></button>
+                            <button class="ui-btn ui-btn-inline" style="background-color: #708090;"  onClick="location.href='mapa.html'" class="ui-btn-active">Mas</a></button>
                             <button class="ui-btn ui-btn-inline" style="background-color:#708090;">Edit</button>
                        </div>
                     </div>
@@ -67,7 +65,7 @@
                         <p><b>GPS: </b></p>
                         <div class="divsBtn">
                             <button class="ui-btn ui-btn-inline" style="background-color:#708090;">Llamar</button>
-                            <button class="ui-btn ui-btn-inline" style="background-color: #708090;" class="ui-btn-active">Mas</a></button>
+                            <button class="ui-btn ui-btn-inline" style="background-color: #708090;"  onClick="location.href='mapa.html'" class="ui-btn-active">Mas</a></button>
                             <button class="ui-btn ui-btn-inline" style="background-color:#708090;">Edit</button>
                        </div>
                     </div>
@@ -78,7 +76,7 @@
                         <p><b>GPS: </b></p>
                         <div class="divsBtn">
                             <button class="ui-btn ui-btn-inline" style="background-color:#708090;">Llamar</button>
-                            <button class="ui-btn ui-btn-inline" style="background-color: #708090;" class="ui-btn-active">Mas</a></button>
+                            <button class="ui-btn ui-btn-inline" style="background-color: #708090;"  onClick="location.href='mapa.html'"  class="ui-btn-active">Mas</a></button>
                             <button class="ui-btn ui-btn-inline" style="background-color:#708090;">Edit</button>
                        </div>
                     </div>
@@ -89,19 +87,37 @@
                         <p><b>GPS: </b></p>
                         <div class="divsBtn">
                             <button class="ui-btn ui-btn-inline" style="background-color:#708090;">Llamar</button>
-                            <button class="ui-btn ui-btn-inline" style="background-color: #708090;" class="ui-btn-active">Mas</a></button>
+                            <button class="ui-btn ui-btn-inline" style="background-color: #708090;"  onClick="location.href='mapa.html'" class="ui-btn-active">Mas</a></button>
                             <button class="ui-btn ui-btn-inline" style="background-color:#708090;">Edit</button>
                        </div>
                     </div>
                     <div id="contBtn">
-					   <button id="btnFijo">+</button>
-                    </div>
+					   <button id="btnFijo" onclick="mover()">+</button>
                 </div>
 			 </div>
 		</div>
+       
+   
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/jquery.mobile.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+ <script>
+			window.onload=setInterval(function mover(){
+                caja = document.getElementById('btnFijo');
+				desplazamiento = 10;
+				posicion = parseInt(caja.style.left);
+				if(posicion < window.innerWidth-100){
+					posicion = posicion + desplazamiento;
+					caja.style.left = posicion + 'px';
+				}else{
+					posicion = posicion + desplazamiento;
+					caja.style.left = posicion + 'px';
+				}
+				if(posicion==1000){ desplacamiento = -10; }
+				if(posicion==0){ desplacamiento = 10; }
+			},10);
+          </script>
+        
     </body>
 </html>
